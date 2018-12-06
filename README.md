@@ -78,7 +78,7 @@ o   for example: changing something on the get, commit & push, the get web page 
 
 
 
-·       Send to me ( achisolomon)  for code review via A SCM Merge / pull - Request from your branch to master, containing all of the code for this exercise.
+·       Send to me ( ######)  for code review via A SCM Merge / pull - Request from your branch to master, containing all of the code for this exercise.
 
 The Merge-Request should contain a short description of your changes, and any other comment you’d like us to know of.
 
