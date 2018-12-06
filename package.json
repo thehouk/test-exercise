@@ -1,0 +1,20 @@
+{
+  "name": "checkpoint-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon $NODE_DEBUG_OPTION index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://arielcohen16@bitbucket.org/shenkarisrael/checkpoint-exercise.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/shenkarisrael/checkpoint-exercise#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.6"
+  }
+}
