@@ -8,14 +8,14 @@ pipeline {
         stage('Checkout'){
             steps {
                 /* checkout scm */
-                git branch: '${env.BRANCH_NAME}', credentialsId: '7b8f5335-2f83-4e06-a80d-6b739328acfd', url: 'https://github.com/thehouk/test-exercise.git'
+                git branch: '${BRANCH_NAME}', credentialsId: '7b8f5335-2f83-4e06-a80d-6b739328acfd', url: 'https://github.com/thehouk/test-exercise.git'
                 }
               }
         stage('Build Docker'){
             steps {
                 /* build image on remote machine */
                 sh '''alias dockerexercise="docker -H=10.250.2.237:2375"
-                      dockerexercise build -t backend:${env.BRANCH_NAME} -f Dockerfile .
+                      dockerexercise build -t backend:${BRANCH_NAME} -f Dockerfile .
                 '''
                 }
               }
@@ -23,7 +23,7 @@ pipeline {
             steps {
                 /* run container on remote machine */
                 sh '''alias dockerexercise="docker -H=10.250.2.237:2375"
-                      dockerexercise run --name checkpoint-exercise -p 80:3000 --restart unless-stopped -d backend:${env.BRANCH_NAME}
+                      dockerexercise run --name checkpoint-exercise -p 80:3000 --restart unless-stopped -d backend:${BRANCH_NAME}
                       '''
                   }
                 }
