@@ -8,7 +8,7 @@ pipeline {
         stage('Checkout'){
             steps {
                 /* checkout scm */
-                git branch: '${env.BRANCH_NAME}', url: 'git@github.com:thehouk/test-exercise.git'
+                git branch: '${env.BRANCH_NAME}', credentialsId: "git-credentials", url: 'git@github.com:thehouk/test-exercise.git'
                 }
               }
         stage('Build Docker'){
