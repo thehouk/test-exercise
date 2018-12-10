@@ -30,18 +30,10 @@ pipeline {
               }
     post{
         success {
-              mail body: 'project build successful',
-                   from: 'xxxx@yyyyy.com',
-                   replyTo: 'xxxx@yyyy.com',
-                   subject: 'project build successful',
-                   to: 'yyyyy@yyyy.com'
+              echo 'whole pipeline successful'
                   }
         failure {
-              mail body: "project build error is here: ${env.BUILD_URL}" ,
-                   from: 'xxxx@yyyy.com',
-                   replyTo: 'yyyy@yyyy.com',
-                   subject: 'project build failed',
-                   to: 'zzzz@yyyyy.com'
+              echo 'pipeline failed, at least one step failed'
                    }
         }
 }
