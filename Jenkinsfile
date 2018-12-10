@@ -1,6 +1,4 @@
-
-#!groovy
-
+Jenkinsfile (Declarative Pipeline)
 pipeline {
     agent agent1
     stages {
