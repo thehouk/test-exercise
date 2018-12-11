@@ -2,7 +2,6 @@ pipeline {
     agent {
         node {
             label 'agent1'
-            sh '''alias dockerexercise="docker -H=10.250.2.237:2375"'''
             }
           }
     stages {
