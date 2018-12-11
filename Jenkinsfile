@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            label 'master'
+            label 'agent1'
             }
           }
     stages {
@@ -15,8 +15,7 @@ pipeline {
             steps {
                 /* build image on remote machine */
                 sh '''alias dockerexercise="docker -H=10.250.2.237:2375"
-                      dockerexercise build -t backend:${BRANCH_NAME} -f Dockerfile .
-                '''
+                      dockerexercise build -t backend:${BRANCH_NAME} -f Dockerfile .'''
                 }
               }
         stage('Deploy'){
