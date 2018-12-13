@@ -1,0 +1,2 @@
+docker run -d --name jenkins --privileged -p 8080:8080 -p 50000:50000 -v /srv/jenkins:/var/jenkins_home --restart unless-stopped jenkins/jenkins:lts
+docker run -d --name jenkins-agent1 --link jenkins:master --restart unless-stopped -e JNLP_PROTOCOL_OPTS=-Dorg.jenkinsci.remoting.engine.JnlpProtocol4.disabled=false jenkins/jnlp-slave -url http://master:8080 -workDir=/home/jenkins/agent <secret from jenkins master after agent creation> agent1
