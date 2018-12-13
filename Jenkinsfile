@@ -15,7 +15,7 @@ pipeline {
             steps {
                 /* build image on remote machine */
                 sh '''#!/bin/sh
-                alias dockerexercise="docker -H=10.250.2.237:2375"
+                alias dockerexercise="docker -H=tcp://10.250.2.237:2375"
                 dockerexercise build -t backend:${BRANCH_NAME} -f Dockerfile .'''
                 }
               }
@@ -23,7 +23,7 @@ pipeline {
             steps {
                 /* run container on remote machine */
                 sh '''#!/bin/sh
-                alias dockerexercise="docker -H=10.250.2.237:2375"
+                alias dockerexercise="docker -H=tcp://10.250.2.237:2375"
                 dockerexercise run --name checkpoint-exercise -p 80:3000 --restart unless-stopped -d backend:${BRANCH_NAME}'''
                   }
                 }
