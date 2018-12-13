@@ -16,7 +16,7 @@ pipeline {
                 /* build image on remote machine */
                 sh '''#!/bin/sh
                       alias dockerexercise="docker -H=10.250.2.237:2375"
-                      "dockerexercise build -t backend:${BRANCH_NAME} -f Dockerfile ."'''
+                      dockerexercise build -t backend:${BRANCH_NAME} -f Dockerfile .'''
                 }
               }
         stage('Deploy'){
@@ -24,7 +24,7 @@ pipeline {
                 /* run container on remote machine */
                 sh '''#!/bin/sh
                       alias dockerexercise="docker -H=10.250.2.237:2375"
-                      "dockerexercise run --name checkpoint-exercise -p 80:3000 --restart unless-stopped -d backend:${BRANCH_NAME} "'''
+                      dockerexercise run --name checkpoint-exercise -p 80:3000 --restart unless-stopped -d backend:${BRANCH_NAME}'''
                   }
                 }
               }
